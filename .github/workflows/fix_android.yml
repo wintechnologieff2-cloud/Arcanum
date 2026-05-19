@@ -1,0 +1,23 @@
+name: Fix Android Maps API Key
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  fix-manifest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Add Google Maps API Key
+        run: |
+          sed -i 's|<meta-data android:name="flutterEmbedding" android:value="2"/>|<meta-data android:name="flutterEmbedding" android:value="2"/>\n    <meta-data android:name="com.google.android.geo.API_KEY" android:value="AIzaSyAd3lRtNdU8cAN5_4JCh6Uv4UdFMu5pGFM"/>|' android/app/src/main/AndroidManifest.xml
+      - name: Commit changes
+        run: |
+          git config --global user.email "action@github.com"
+          git config --global user.name "GitHub Action"
+          git add .
+          git commit -m "Add Google Maps API Key" || echo "No changes"
+          git push
