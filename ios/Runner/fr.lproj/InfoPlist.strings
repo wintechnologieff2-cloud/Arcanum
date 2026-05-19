@@ -1,0 +1,2 @@
+NSLocationWhenInUseUsageDescription = "This app will use your actual location";
+NSPhotoLibraryUsageDescription = "In order to upload data, this app requires permission to access to photo library.";

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "673037118515",
+    "project_id": "arcanum-aba1c",
+    "storage_bucket": "arcanum-aba1c.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:673037118515:android:5c1eb9fa06a75aff490746",
+        "android_client_info": {
+          "package_name": "com.wintechnologie.arcanum"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAd3iRtNdU8cAN5_4JCh6Uv4UdFMu5pGFM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
