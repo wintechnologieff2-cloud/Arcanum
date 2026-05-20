@@ -11,13 +11,27 @@ jobs:
       - uses: actions/checkout@v3
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
+          ref: flutterflow
+
+      - name: Check if API key already exists
+        id: check
+        run: |
+          if grep -q "com.google.android.geo.API_KEY" android/app/src/main/AndroidManifest.xml; then
+            echo "exists=true" >> $GITHUB_OUTPUT
+          else
+            echo "exists=false" >> $GITHUB_OUTPUT
+          fi
+
       - name: Add Google Maps API Key
+        if: steps.check.outputs.exists == 'false'
         run: |
           sed -i 's|<meta-data android:name="flutterEmbedding" android:value="2"/>|<meta-data android:name="flutterEmbedding" android:value="2"/>\n    <meta-data android:name="com.google.android.geo.API_KEY" android:value="AIzaSyAd3lRtNdU8cAN5_4JCh6Uv4UdFMu5pGFM"/>|' android/app/src/main/AndroidManifest.xml
+
       - name: Commit changes
+        if: steps.check.outputs.exists == 'false'
         run: |
           git config --global user.email "action@github.com"
           git config --global user.name "GitHub Action"
-          git add .
-          git commit -m "Add Google Maps API Key" || echo "No changes"
+          git add android/app/src/main/AndroidManifest.xml
+          git commit -m "Add Google Maps API Key [skip ci]"
           git push
