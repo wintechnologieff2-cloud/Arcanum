@@ -202,6 +202,11 @@ class UsersRecord extends FirestoreRecord {
   List<DocumentReference> get blockedList => _blockedList ?? const [];
   bool hasBlockedList() => _blockedList != null;
 
+  // "viewPictureList" field.
+  List<DocumentReference>? _viewPictureList;
+  List<DocumentReference> get viewPictureList => _viewPictureList ?? const [];
+  bool hasViewPictureList() => _viewPictureList != null;
+
   void _initializeFields() {
     _email = snapshotData['email'] as String?;
     _displayName = snapshotData['display_name'] as String?;
@@ -241,6 +246,7 @@ class UsersRecord extends FirestoreRecord {
         getDataList(snapshotData['pratiquesSpirituelles_en']);
     _centreInteretEn = getDataList(snapshotData['centreInteret_en']);
     _blockedList = getDataList(snapshotData['blockedList']);
+    _viewPictureList = getDataList(snapshotData['viewPictureList']);
   }
 
   static CollectionReference get collection =>
@@ -378,7 +384,8 @@ class UsersRecordDocumentEquality implements Equality<UsersRecord> {
         listEquality.equals(
             e1?.pratiquesSpirituellesEn, e2?.pratiquesSpirituellesEn) &&
         listEquality.equals(e1?.centreInteretEn, e2?.centreInteretEn) &&
-        listEquality.equals(e1?.blockedList, e2?.blockedList);
+        listEquality.equals(e1?.blockedList, e2?.blockedList) &&
+        listEquality.equals(e1?.viewPictureList, e2?.viewPictureList);
   }
 
   @override
@@ -419,7 +426,8 @@ class UsersRecordDocumentEquality implements Equality<UsersRecord> {
         e?.styleCommunicationEn,
         e?.pratiquesSpirituellesEn,
         e?.centreInteretEn,
-        e?.blockedList
+        e?.blockedList,
+        e?.viewPictureList
       ]);
 
   @override

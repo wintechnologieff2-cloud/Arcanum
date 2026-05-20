@@ -983,6 +983,48 @@ class _ChatConversationWidgetState extends State<ChatConversationWidget> {
                                               safeSetState(() {
                                                 _model.textController?.clear();
                                               });
+                                              _model.chatCount =
+                                                  await queryChatMessagesRecordCount(
+                                                parent: widget.chatRef,
+                                              );
+                                              if (_model.chatCount == 3) {
+                                                await currentUserReference!
+                                                    .update({
+                                                  ...mapToFirestore(
+                                                    {
+                                                      'viewPictureList':
+                                                          FieldValue
+                                                              .arrayUnion([
+                                                        functions.getOtherUserRef(
+                                                            containerChatRecord
+                                                                .userIDs
+                                                                .toList(),
+                                                            currentUserReference!)
+                                                      ]),
+                                                    },
+                                                  ),
+                                                });
+
+                                                await functions
+                                                    .getOtherUserRef(
+                                                        containerChatRecord
+                                                            .userIDs
+                                                            .toList(),
+                                                        currentUserReference!)
+                                                    .update({
+                                                  ...mapToFirestore(
+                                                    {
+                                                      'viewPictureList':
+                                                          FieldValue
+                                                              .arrayUnion([
+                                                        currentUserReference
+                                                      ]),
+                                                    },
+                                                  ),
+                                                });
+                                              }
+
+                                              safeSetState(() {});
                                             },
                                     ),
                                   ],

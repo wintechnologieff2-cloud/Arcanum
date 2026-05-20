@@ -35,8 +35,6 @@ export '/arcane_test/accueil_arcane_2/accueil_arcane2_widget.dart'
     show AccueilArcane2Widget;
 export '/profil/votre_profil_2/votre_profil2_widget.dart'
     show VotreProfil2Widget;
-export '/conversation/chat_conversation_02/chat_conversation02_widget.dart'
-    show ChatConversation02Widget;
 export '/conversation/limitedematch/limitedematch_widget.dart'
     show LimitedematchWidget;
 export '/layout/background_2/background2_widget.dart' show Background2Widget;

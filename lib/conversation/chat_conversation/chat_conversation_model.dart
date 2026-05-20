@@ -10,6 +10,8 @@ class ChatConversationModel extends FlutterFlowModel<ChatConversationWidget> {
   FocusNode? textFieldFocusNode;
   TextEditingController? textController;
   String? Function(BuildContext, String?)? textControllerValidator;
+  // Stores action output result for [Firestore Query - Query a collection] action in IconButton widget.
+  int? chatCount;
 
   @override
   void initState(BuildContext context) {}

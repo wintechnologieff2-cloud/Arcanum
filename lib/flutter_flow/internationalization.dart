@@ -568,69 +568,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Home',
     },
   },
-  // Chat_Conversation_02
-  {
-    'e71nd4m9': {
-      'fr': 'Jean Pierre, 24',
-      'en': 'Jean Pierre, 24',
-    },
-    'esmopk51': {
-      'fr': 'En ligne',
-      'en': 'Online',
-    },
-    'pf58bdtr': {
-      'fr': 'Hey 🙂 comment s’est passée ta journée?',
-      'en': 'Hey 🙂 how was your day?',
-    },
-    'kewdehr7': {
-      'fr': 'Mood universel.',
-      'en': 'Universal mood.',
-    },
-    '6p5ddqxh': {
-      'fr': 'Team café noir ou latte fancy?',
-      'en': 'Team black coffee or fancy latte?',
-    },
-    'bh9zbjgu': {
-      'fr': 'Mood universel.',
-      'en': 'Universal mood.',
-    },
-    'hon1cxyw': {
-      'fr': 'Team café noir ou latte fancy?',
-      'en': 'Team black coffee or fancy latte?',
-    },
-    '04jus7kb': {
-      'fr': 'Mood universel.',
-      'en': 'Universal mood.',
-    },
-    'ew447esd': {
-      'fr': 'Team café noir ou latte fancy?',
-      'en': 'Team black coffee or fancy latte?',
-    },
-    'vlz10uzd': {
-      'fr': 'Mood universel.',
-      'en': 'Universal mood.',
-    },
-    'c07y8ss7': {
-      'fr': 'Team café noir ou latte fancy?',
-      'en': 'Team black coffee or fancy latte?',
-    },
-    'fx2eqzez': {
-      'fr': 'Latte!',
-      'en': 'Latte!',
-    },
-    'uoqn4d0i': {
-      'fr': 'Mais j’essaie de pas trop l’assumer.',
-      'en': 'But I\'m trying not to admit it too much.',
-    },
-    'ilxbgpba': {
-      'fr': 'Aa',
-      'en': 'Aa',
-    },
-    '4g3wp9zm': {
-      'fr': 'Home',
-      'en': 'Home',
-    },
-  },
   // Limitedematch
   {
     's0ikse3n': {

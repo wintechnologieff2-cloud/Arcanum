@@ -205,11 +205,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => VotreProfil2Widget(),
         ),
         FFRoute(
-          name: ChatConversation02Widget.routeName,
-          path: ChatConversation02Widget.routePath,
-          builder: (context, params) => ChatConversation02Widget(),
-        ),
-        FFRoute(
           name: LimitedematchWidget.routeName,
           path: LimitedematchWidget.routePath,
           builder: (context, params) => LimitedematchWidget(),
