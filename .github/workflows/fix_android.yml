@@ -25,7 +25,7 @@ jobs:
       - name: Add Google Maps API Key
         if: steps.check.outputs.exists == 'false'
         run: |
-          sed -i 's|<meta-data android:name="flutterEmbedding" android:value="2"/>|<meta-data android:name="flutterEmbedding" android:value="2"/>\n    <meta-data android:name="com.google.android.geo.API_KEY" android:value="AIzaSyAd3lRtNdU8cAN5_4JCh6Uv4UdFMu5pGFM"/>|' android/app/src/main/AndroidManifest.xml
+          sed -i 's|</application>|    <meta-data android:name="com.google.android.geo.API_KEY" android:value="AIzaSyAd3lRtNdU8cAN5_4JCh6Uv4UdFMu5pGFM"/>\n</application>|' android/app/src/main/AndroidManifest.xml
 
       - name: Commit changes
         if: steps.check.outputs.exists == 'false'
@@ -33,5 +33,5 @@ jobs:
           git config --global user.email "action@github.com"
           git config --global user.name "GitHub Action"
           git add android/app/src/main/AndroidManifest.xml
-          git commit -m "Add Google Maps API Key [skip ci]"
+          git commit -m "Add Google Maps API Key [skip ci]" || echo "No changes"
           git push
